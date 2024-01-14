@@ -1,0 +1,39 @@
+function PellF.pellf 1
+//n eq 0
+push argument 0
+push constant 0
+eq
+if-goto RET_0
+
+// n eq 1
+push argument 0
+push constant 1
+eq
+if-goto RET_1
+
+push argument 0
+push constant 1
+sub
+
+call PellF.pellf 1
+push argument 0
+push constant 1
+sub
+
+call PellF.pellf 1
+add
+push argument 0
+push constant 2
+sub
+
+call PellF.pellf 1
+add
+return
+
+label RET_0
+push constant 0
+return
+
+label RET_1
+push constant 1
+return
